@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="/assets/css/aos/aos.css">
     <link rel="stylesheet" href="/assets/css/swiper/swiper.css">
     <link rel="stylesheet" href="/assets/css/lightgallery.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Template Stylesheet -->
     <link rel="stylesheet" href="/assets/css/style.css">
     <!-- Responsive Stylesheet -->
@@ -55,7 +56,9 @@
 
             </div>
             <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="/pag_inicial.html"><img src="/assets/images/logo_resized.png" alt="Divulga aí"></a>
+             <a class ="navbar-brand" href="../../../pag_inicial.html"><img src="../../../assets/images/logo_resized.png" alt="divulga ai"></a>
+
+		    
                 <div class="group d-flex align-items-center">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
@@ -63,13 +66,14 @@
 
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="./portal_empresa.html">Meu Portal</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./empresa_perfil.html">Meu perfil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./portal_influencer.html">Meu Portal</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./influencer_perfil.html">Meu perfil</a></li>
                         <li class="nav-item"><a class="nav-link" href="./meus_anuncios1.html">Meus anúncios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./empresa_chat.html">Meus chats</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./empresa_criar_ad.html">Fazer anúncio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./influencer_chat.html">Meus chats</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./influencer_criar_ad.html">Fazer anúncio</a></li>
                     </ul>
                 </div>
+               
 
     </header>
 
@@ -111,13 +115,13 @@
             <div class="container text-center">
                 <p>Redes Sociais Alvos</p>
                 <input type="checkbox" class="redes ml-8" value="instagram">
-                <img src="/assets/images/Instagram-Icon.png" height="40" width="40">
+                <img src="/assets/images/Instagram-Icon.png" height="40" width="40" title="Instagram">
 
                 <input type="checkbox" class="redes ml-5" value="tiktok">
-                <img src="/assets/images/tiktok.png" height="40" width="40">
+                <img src="/assets/images/tiktok.png" height="40" width="40" title="TikTok">
 
                 <input type="checkbox" class="redes ml-5" value="youtube">
-                <img src="/assets/images/youtube logo.png" height="40" width="40">
+                <img src="/assets/images/youtube logo.png" height="40" width="40" title="YouTube">
 
                
 
@@ -126,12 +130,17 @@
                        
     </div>
 
+
+
+
+
+
 <br><br><br><br>
     <div class="container">
         <div class="row">
             <div class="container text-center">
 							
-              <button class="btn btn-primary">
+              <button onclick="procurar()" class="btn btn-primary">
                 <span class="material-icons">search</span>
                 Pesquisar
               </button>
@@ -143,7 +152,11 @@
 
 		<br><br><br><br>
 		<!--cria alguma seção a partir daqui-->
-		
+      
+<div id="resultado">
+
+</div>
+    
 
     <div class="foot-note" style="margin-top: 15px;">
         <div class="container">
@@ -153,6 +166,139 @@
             </div>
         </div>
     </div>
+
+
+<script>
+/*
+       function clicou(){
+        //alert("clicou")
+        result = document.querySelector("#resultado")
+        
+        result.innerHTML=`
+        <div class="text-center">
+            procurando aguarde.....
+            <div class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>       
+        </div>`
+
+       }
+       */
+
+const menu = document.querySelectorAll(".dropdown-item")
+menu.forEach(
+  (node,index) => {
+  node.addEventListener("click", function(){
+   if(`${index}` == 0){ 
+   	console.log("clicado no Gaming")
+       Swal.fire({
+       icon: 'success',
+       title: 'Gaming Escolhido',
+       showConfirmButton: false,
+       timer: 1500
+         })
+        }
+   else if(`${index}` == 1){
+   	console.log("clicado no Cosméticos")
+       Swal.fire({
+       icon: 'success',
+       title: 'Cosméticos Escolhido',
+       showConfirmButton: false,
+       timer: 1500
+})
+}
+   
+   else if(`${index}` == 2){
+   	console.log("clicado no Lifestyle")
+       Swal.fire({
+       icon: 'success',
+       title: 'Lifestyle Escolhido',
+       showConfirmButton: false,
+       timer: 1500
+})
+       
+}
+   
+    else if(`${index}` == 3){
+   	console.log("clicado no Fitness")
+       Swal.fire({
+       icon: 'success',
+       title: 'Fitness Escolhido',
+       showConfirmButton: false,
+       timer: 1500
+})
+}
+   
+     else if(`${index}` == 4){
+   	console.log("clicado no Esportes")
+       Swal.fire({
+       icon: 'success',
+       title: 'Esportes Escolhido',
+       showConfirmButton: false,
+       timer: 1500
+})
+}
+
+else if(`${index}` == 5){
+   	console.log("clicado no Variedades")
+       Swal.fire({
+       icon: 'success',
+       title: 'Variedades Escolhido',
+       showConfirmButton: false,
+       timer: 1500
+})
+}
+
+
+    else if(`${index}` == 6){
+   	console.log("clicado no Culinaria")
+       Swal.fire({
+       icon: 'success',
+       title: 'Culinaria Escolhido',
+       showConfirmButton: false,
+       timer: 1500
+})
+}
+
+
+})
+
+    //console.log(node,index)
+  }
+)
+
+
+
+
+
+
+
+
+procurar = () => {
+    let timerInterval
+Swal.fire({
+  title: 'por favor espere..!',
+  html: 'Procurando aguarde <b></b> segundos.',
+  timer: 2000,
+  timerProgressBar: true,
+  didOpen: () => {
+    Swal.showLoading()
+    const b = Swal.getHtmlContainer().querySelector('b')
+    timerInterval = setInterval(() => {
+      b.textContent = Swal.getTimerLeft()
+    }, 100)
+  },
+  willClose: () => {
+    clearInterval(timerInterval)
+  }
+}).then((result) => {
+  /* Read more about handling dismissals below */
+  if (result.dismiss === Swal.DismissReason.timer) {
+    console.log('I was closed by the timer')
+  }
+})
+}
+</script>
 
     <!--jQuery-->
     <script src="/assets/js/jquery-3.3.1.js"></script>
