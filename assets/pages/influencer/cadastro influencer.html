@@ -59,51 +59,53 @@
                 <form name="cadastro_influencer" action="" method="post">
                     <p>
                         <label>Nome Completo:</label>
-                    <p><input type="text" class="nome" required></p>
+                    <p><input type="text" class="nome" id="nome" required></p>
                     </p>
                     <p>
                         <label>CPF:</label>
-                    <p><input type="number" class="cpf" required maxlength="11"></p>
+                    <p><input type="number" class="cpf" id="cpf" required maxlength="11" minlength="1"></p>
                     </p>
                     <p>
                         <label>Email:</label>
-                    <p><input type="email" class="email" required></p>
+                    <p><input type="email" class="email" id="email" required></p>
                     </p>
                     <p>
                         <label>Senha(Minímo de 8 caractéres):</label>
-                    <p><input type="password" class="senha" required minlength="8"></p>
+                    <p><input type="password" class="senha" id="senha" required minlength="8" maxlength="32"></p>
                     </p>
                     <p>
-                        <label for="estado">Local de residência:</label>
-                        <select>
-                            <option class="estado" value="ac">Acre</option>
-                            <option class="estado" value="al">Alagoas</option>
-                            <option class="estado" value="ap">Amapá</option>
-                            <option class="estado" value="am">Amazonas</option>
-                            <option class="estado" value="ba">Bahia</option>
-                            <option class="estado" value="ce">Ceará</option>
-                            <option class="estado" value="df">Distrito Federal</option>
-                            <option class="estado" value="es">Espírito Santo</option>
-                            <option class="estado" value="go">Goiás</option>
-                            <option class="estado" value="ma">Maranhão</option>
-                            <option class="estado" value="mt">Mato Grosso</option>
-                            <option class="estado" value="ms">Mato Grosso do Sul</option>
-                            <option class="estado" value="mg">Minhas Gerais</option>
-                            <option class="estado" value="pa">Pará</option>
-                            <option class="estado" value="pb">Paraíba</option>
-                            <option class="estado" value="pr">Paraná</option>
-                            <option class="estado" value="pn">Pernambuco</option>
-                            <option class="estado" value="pi">Piauí</option>
-                            <option class="estado" value="rj">Rio de Janeiro</option>
-                            <option class="estado" value="rn">Rio Grande do Norte</option>
-                            <option class="estado" value="rs">Rio Grande do Sul</option>
-                            <option class="estado" value="ro">Rondônia</option>
-                            <option class="estado" value="rr">Roraima</option>
-                            <option class="estado" value="sc">Santa Catarina</option>
-                            <option class="estado" value="sp">São Paulo</option>
-                            <option class="estado" value="se">Sergipe</option>
-                            <option class="estado" value="to">Tocantins</option>
-                        </select>
+                        <div class="mb-3">
+                            <label for="estado">Localidade:</label>
+                            <select class=" form-select-lg mb-3" id="estado" aria-label=".form-select-lg example">
+                                <option class="estado" value="ac">Acre</option>
+                                <option class="estado" value="al">Alagoas</option>
+                                <option class="estado" value="ap">Amapá</option>
+                                <option class="estado" value="am">Amazonas</option>
+                                <option class="estado" value="ba">Bahia</option>
+                                <option class="estado" value="ce">Ceará</option>
+                                <option class="estado" value="df">Distrito Federal</option>
+                                <option class="estado" value="es">Espírito Santo</option>
+                                <option class="estado" value="go">Goiás</option>
+                                <option class="estado" value="ma">Maranhão</option>
+                                <option class="estado" value="mt">Mato Grosso</option>
+                                <option class="estado" value="ms">Mato Grosso do Sul</option>
+                                <option class="estado" value="mg">Minhas Gerais</option>
+                                <option class="estado" value="pa">Pará</option>
+                                <option class="estado" value="pb">Paraíba</option>
+                                <option class="estado" value="pr">Paraná</option>
+                                <option class="estado" value="pn">Pernambuco</option>
+                                <option class="estado" value="pi">Piauí</option>
+                                <option class="estado" value="rj">Rio de Janeiro</option>
+                                <option class="estado" value="rn">Rio Grande do Norte</option>
+                                <option class="estado" value="rs">Rio Grande do Sul</option>
+                                <option class="estado" value="ro">Rondônia</option>
+                                <option class="estado" value="rr">Roraima</option>
+                                <option class="estado" value="sc">Santa Catarina</option>
+                                <option class="estado" value="sp">São Paulo</option>
+                                <option class="estado" value="se">Sergipe</option>
+                                <option class="estado" value="to">Tocantins</option>
+                            </select>
+                        </div>
                     </p>
                     <p>
                         <label>Categoria do conteúdo:</label>
@@ -121,15 +123,16 @@
                     </p>
                     <p>
                         <label for="redes">Redes sociais utilizadas:</label>
+                    </p>
                     <p>
                         <input type="checkbox" class="redes" value="instagram">
-                        <image src="/assets/images/Instagram-Icon.png" height="40" width="40">
-                            <input type="checkbox" class="redes" value="tiktok">
-                            <image src="/assets/images/tiktok.png" height="40" width="40"></image>
-                            <input type="checkbox" class="redes" value="youtube">
-                            <image src="/assets/images/youtube logo.png" height="40" width="40"></image>
+                        <img src="/assets/images/Instagram-Icon.png" height="40" width="40">
+                        <input type="checkbox" class="redes" value="tiktok">
+                        <img src="/assets/images/tiktok.png" height="40" width="40">
+                        <input type="checkbox" class="redes" value="youtube">
+                        <img src="/assets/images/youtube logo.png" height="40" width="40">
                     </p>
-                    </p>
+                    
                     <p>
                         <label for="descricao">Descreva seu conteúdo:</label>
                     <p>
@@ -138,7 +141,11 @@
 
                     </p>
                     <p>
-                        <a href="./portal_influencer.html" class="btn btn-primary">Fazer Cadastro</a>
+                        <div class="mb-3">
+                            <a data-aos="fade-right" onclick="salvarDados()" data-aos-delay="900" class="btn btn-primary">
+                                CRIAR O PERFIL
+                            </a>
+                        </div>
                     </p>
                 </form>
                 </p>
@@ -155,6 +162,7 @@
         </div>
     </div>
 
+    <script src="cadastro_influencer.js"></script>
     <!--jQuery-->
     <script src="/assets/js/jquery-3.3.1.js"></script>
     <!--Plugins-->
