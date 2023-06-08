@@ -69,12 +69,10 @@
                         <input type="text" id="nome_da_empresa" class="" required maxlength="20">
                     </div>
 
-
                     <div class="mb-3">
                         <p><label for="cnpj">CNPJ:</label></p>
                         <input type="number" id="cnpj" class="" required maxlength="20">
                     </div>
-
 
                     <div class="mb-3">
                         <p><label for="email">EMAIL:</label></p>
@@ -86,81 +84,68 @@
                         <input type="password" id="senha" class="" required maxlength="10">
                     </div>
 
+                    <div class="mb-3">
+                        <label for="estado">Localidade:</label>
+                        <select class=" form-select-lg mb-3" id="estado" aria-label=".form-select-lg example">
+                            <option class="estado" value="ac">Acre</option>
+                            <option class="estado" value="al">Alagoas</option>
+                            <option class="estado" value="ap">Amapá</option>
+                            <option class="estado" value="am">Amazonas</option>
+                            <option class="estado" value="ba">Bahia</option>
+                            <option class="estado" value="ce">Ceará</option>
+                            <option class="estado" value="df">Distrito Federal</option>
+                            <option class="estado" value="es">Espírito Santo</option>
+                            <option class="estado" value="go">Goiás</option>
+                            <option class="estado" value="ma">Maranhão</option>
+                            <option class="estado" value="mt">Mato Grosso</option>
+                            <option class="estado" value="ms">Mato Grosso do Sul</option>
+                            <option class="estado" value="mg">Minhas Gerais</option>
+                            <option class="estado" value="pa">Pará</option>
+                            <option class="estado" value="pb">Paraíba</option>
+                            <option class="estado" value="pr">Paraná</option>
+                            <option class="estado" value="pn">Pernambuco</option>
+                            <option class="estado" value="pi">Piauí</option>
+                            <option class="estado" value="rj">Rio de Janeiro</option>
+                            <option class="estado" value="rn">Rio Grande do Norte</option>
+                            <option class="estado" value="rs">Rio Grande do Sul</option>
+                            <option class="estado" value="ro">Rondônia</option>
+                            <option class="estado" value="rr">Roraima</option>
+                            <option class="estado" value="sc">Santa Catarina</option>
+                            <option class="estado" value="sp">São Paulo</option>
+                            <option class="estado" value="se">Sergipe</option>
+                            <option class="estado" value="to">Tocantins</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3 ">
+                        <p><label>Categoria do conteúdo:</label></p>
+                        <input type="checkbox" class="categoria ml-3" value="gaming">Gaming
+                        <input type="checkbox" class="categoria ml-3" value="cosmeticos">Cosméticos
+                        <input type="checkbox" class="categoria ml-3" value="lifestyle">Lifestyle
+                        <input type="checkbox" class="categoria ml-3" value="fitness">Fitness
+                        <input type="checkbox" class="categoria ml-3" value="esportes">Esportes
+                        <input type="checkbox" class="categoria ml-3" value="variedades">Variedades
+                        <input type="checkbox" class="categoria ml-3" value="culinaria">Culinária
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="descricao" class="form-label">Descriçao da Empresa</label>
+                        <textarea class="" id="descricao" rows="3"></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <a data-aos="fade-right" data-aos-delay="900" href="#" class="btn btn-primary">
+                            ADICIONA LOGO
+                        </a>
+                    </div>
+
+                    <div class="mb-3">
+                        <a data-aos="fade-right" onclick="salvarDados()" data-aos-delay="900" class="btn btn-primary">
+                            CRIAR O PERFIL
+                        </a>
+                    </div>
+
                 </form>
-
-
-
-
-
-
-
-                <div class="mb-3 ">
-                    <p><label>Categoria do conteúdo:</label></p>
-                    <input type="checkbox" class="categoria ml-3" value="gaming">Gaming
-                    <input type="checkbox" class="categoria ml-3" value="cosmeticos">Cosméticos
-                    <input type="checkbox" class="categoria ml-3" value="lifestyle">Lifestyle
-                    <input type="checkbox" class="categoria ml-3" value="fitness">Fitness
-                    <input type="checkbox" class="categoria ml-3" value="esportes">Esportes
-                    <input type="checkbox" class="categoria ml-3" value="variedades">Variedades
-                    <input type="checkbox" class="categoria ml-3" value="culinaria">Culinária
-                </div>
-
-
-
-
-                <div class="mb-3">
-                    <label for="estado">Localidade:</label>
-                    <select class=" form-select-lg mb-3" aria-label=".form-select-lg example">
-                        <option class="estado" value="ac">Acre</option>
-                        <option class="estado" value="al">Alagoas</option>
-                        <option class="estado" value="ap">Amapá</option>
-                        <option class="estado" value="am">Amazonas</option>
-                        <option class="estado" value="ba">Bahia</option>
-                        <option class="estado" value="ce">Ceará</option>
-                        <option class="estado" value="df">Distrito Federal</option>
-                        <option class="estado" value="es">Espírito Santo</option>
-                        <option class="estado" value="go">Goiás</option>
-                        <option class="estado" value="ma">Maranhão</option>
-                        <option class="estado" value="mt">Mato Grosso</option>
-                        <option class="estado" value="ms">Mato Grosso do Sul</option>
-                        <option class="estado" value="mg">Minhas Gerais</option>
-                        <option class="estado" value="pa">Pará</option>
-                        <option class="estado" value="pb">Paraíba</option>
-                        <option class="estado" value="pr">Paraná</option>
-                        <option class="estado" value="pn">Pernambuco</option>
-                        <option class="estado" value="pi">Piauí</option>
-                        <option class="estado" value="rj">Rio de Janeiro</option>
-                        <option class="estado" value="rn">Rio Grande do Norte</option>
-                        <option class="estado" value="rs">Rio Grande do Sul</option>
-                        <option class="estado" value="ro">Rondônia</option>
-                        <option class="estado" value="rr">Roraima</option>
-                        <option class="estado" value="sc">Santa Catarina</option>
-                        <option class="estado" value="sp">São Paulo</option>
-                        <option class="estado" value="se">Sergipe</option>
-                        <option class="estado" value="to">Tocantins</option>
-                    </select>
-                </div>
-
-
-
-                <div class="mb-3">
-                    <label for="descricao" class="form-label">Descriçao da Empresa</label>
-                    <textarea class="" id="descricao" rows="3"></textarea>
-                </div>
-
-
-                <div class="mb-3">
-                    <a data-aos="fade-right" data-aos-delay="900" href="#" class="btn btn-primary">
-                        ADICIONA LOGO
-                    </a>
-                </div>
-
-
-                <div class="mb-3">
-                    <a data-aos="fade-right" data-aos-delay="900" href="./portal_empresa.html" class="btn btn-primary">
-                        CRIAR O PERFIL
-                    </a>
-                </div>
 
             </div>
 
@@ -178,6 +163,7 @@
         </div>
     </div>
 
+    <script src="cadastro_empresa.js"></script>
     <!--jQuery-->
     <script src="/assets/js/jquery-3.3.1.js"></script>
     <!--Plugins-->
