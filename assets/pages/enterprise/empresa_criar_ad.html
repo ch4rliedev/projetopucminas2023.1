@@ -69,20 +69,27 @@
         <div class="row">
             <div class="col-12 align-items-center justify-content-center flex-column">
                 <p><h1> Escreva o título do seu anúncio:</h1></p>
-                <p><textarea name="" id="" cols="20" rows="1" required maxlength="30"></textarea></p>
+                <p><textarea name="" id="titulo" cols="20" rows="1" required maxlength="30"></textarea></p>
+
                 <p><h1> Descreva como deseja o conteúdo</h1></p>
-                <p><textarea class="descInf" rows="7" cols="20" maxlength="1000" required></textarea></p>
+                <p><textarea id="descAnuncio" class="descInf" rows="7" cols="20" maxlength="1000" required></textarea></p>
+
                 <p><h1> Selecione as redes sociais desejadas</h1></p>
-                <p><input type="checkbox" class="" value="">
+                <p>
+                    <input id="tiktok" type="checkbox" class="" value="">
                     <image src="/assets/images/tiktok.png" height="60" width="60"></image>
-                    <input type="checkbox" class="" value="">
+
+                    <input id="instagram" type="checkbox" class="" value="">
                     <image src="/assets/images/Instagram-Icon.png" height="60" width="60"></image>
-                    <input type="checkbox" class="" value="">
+
+                    <input id="youtube" type="checkbox" class="" value="">
                     <image src="/assets/images/youtube logo.png" height="60" width="60"></image>
                 </p>
+
                 <p><h1> Valor:</h1></p>
-                <p><input type="number" class="" required value=""></p>
-                <p><button class="button" href="">Fazer anúncio</button></p>
+                <p><input id="valor" type="number" class="" required value=""></p>
+
+                <p><button onclick="fazerAnuncio()" class="button" href="">Fazer anúncio</button></p>
                                    
             </div>
 
@@ -109,6 +116,8 @@
     <script src="/assets/js/lightgallery-all.min.js"></script>
     <!--Template Script-->
     <script src="/assets/js/main.js"></script>
+
+    <script src="empresa_criar_ad.js"></script>
 </body>
 </html>
         
