@@ -68,11 +68,12 @@
             <div class="col-12" style="margin-top: 15px;">
 
                 <div class="telaLogin">
-                    
-                    <h1 class="email">Email: <input type="email" required></h1>
-                    <h1 class="senha">Senha: <input type="password" required minlength="8"></h1>
-                    
-                    <a class="btn btn-primary" href="/assets/pages/enterprise/portal_empresa.html">Entrar - Empresa</a> <a class="btn btn-primary" href="/assets/pages/influencer/portal_influencer.html">Entrar - Influencer</a> <br> <br>
+
+                    <h1 class="email">Email: <input id="email" type="email" required></h1>
+                    <h1 class="senha">Senha: <input id="senha" type="password" required minlength="8"></h1>
+
+                    <a class="btn btn-primary" onclick="entrar(0)">Entrar - Empresa</a> 
+                    <a onclick="entrar(1)" class="btn btn-primary"">Entrar - Influencer</a> <br> <br>
                     <a class="btn btn-secundary" href="/assets/pages/public/resetPassword_0.html">Esqueci a senha</a>
 
                 </div>
@@ -85,7 +86,7 @@
     </div>
 
 
-
+    <!-- onclick="entrarInfluencer()" -->
 
     <div class="foot-note" style="margin-top: 15px;">
         <div class="container">
@@ -95,6 +96,7 @@
             </div>
         </div>
     </div>
+
 
     <!--jQuery-->
     <script src="/assets/js/jquery-3.3.1.js"></script>
@@ -106,6 +108,6 @@
     <script src="/assets/js/lightgallery-all.min.js"></script>
     <!--Template Script-->
     <script src="/assets/js/main.js"></script>
-            
+    
     <script src="login.js"></script>
 </body>
