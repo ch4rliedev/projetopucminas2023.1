@@ -83,8 +83,8 @@
     <section class="icon-container">
         <div class="img-an1">
             <h2 >Anúncio 1</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+            <p id="titulo">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+            <p id="anuncio">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
             
         </div>
 
@@ -118,7 +118,18 @@
             </div>
         </div>
     </div>
-
+    
+ <!--pegar o valor do localStorage que foi criado em -> empresa_criar_ad.html e adicionar no nesse html-->      
+ <script type="text/javascript">
+    const data = localStorage.getItem("listAnuncio");
+    const parsedData = JSON.parse(data);
+    for(let ads of parsedData){
+        document.querySelector("#titulo").innerHTML = `${ads.titulo}`
+        document.querySelector("#anuncio").innerHTML = `${ads.descAnuncio}`
+        console.log(ads)
+    }
+</script>
+            
     <!--jQuery-->
     <script src="/assets/js/jquery-3.3.1.js"></script>
     <!--Plugins-->
