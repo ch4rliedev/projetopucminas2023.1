@@ -72,10 +72,11 @@
 
                 <div class="conteudo">
                     <div class="introducao">
-                        <h1>Nome: Influenciador</h1>
-                        <h1>Email: influenciador@gmail.com</h1>
-                        <h1>Localidade: Belo Horizonte - MG</h1>
-                    </div>
+                    <h1 id="nome_influencer">Nome: Não logado</h1>
+                    <h1 id="email">Email: Não logado</h1>
+                    <h1 id="localidade">Localidade: Não logado</h1>
+                    <h1 id="cpf">CNPJ: Não logado</h1>
+                </div>
 
 
 
@@ -112,7 +113,8 @@
                     </div>
 
                     <div class="descricaoInf">
-                        <h1>Descrição: Descrição que o influenciador fez sobre o próprio trabalho</h1>
+                        <h1>Descrição:</h1>
+                        <p id="descricao">Não logado</p>
                     </div>
 
 
@@ -138,6 +140,20 @@
             </div>
         </div>
     </div>
+
+<script type="text/javascript">
+    const data = localStorage.getItem("listCadastro");
+    const parsedData = JSON.parse(data);
+    const email = localStorage.getItem("userCurrent");
+
+    let influencer = parsedData.find(item => item.email === email);
+
+    document.querySelector("#nome_influencer").innerHTML = `Nome: ${influencer.nomeInfluencer}`;
+    document.querySelector("#email").innerHTML = `Email: ${influencer.email}`;
+    document.querySelector("#localidade").innerHTML = `Localidade: ${influencer.localidade}`;
+    document.querySelector("#cpf").innerHTML = `CPF: ${influencer.cpf}`;
+    document.querySelector("#descricao").innerHTML = `<q>${influencer.descricao}</q>`;
+</script>
 
     <!--jQuery-->
     <script src="/assets/js/jquery-3.3.1.js"></script>

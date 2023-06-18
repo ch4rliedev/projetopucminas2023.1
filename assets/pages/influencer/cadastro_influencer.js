@@ -5,6 +5,19 @@ function salvarDados() {
   const senha = document.getElementById("senha").value;
   const localidade = document.querySelector(".form-select-lg").value;
 
+  let listCadastro = JSON.parse(localStorage.getItem("listCadastro") || "[]");
+
+  // Verifica se já existe um usuário cadastrado no localStorage pelo valor de email e o valor de cpf
+  const existingUser = listCadastro.find((user) => user.email === email || user.cpf === cpf);
+  if (existingUser) {
+    if (existingUser.email === email) {
+      alert("Já existe um usuário cadastrado com este email.");
+    } else {
+      alert("Já existe um usuário cadastrado com este CPF.");
+    }
+    return;
+  }
+
   const categorias = Array.from(document.getElementsByClassName("categoria"))
     .filter((categoria) => categoria.checked)
     .map((categoria) => categoria.value);
@@ -56,25 +69,25 @@ function salvarDados() {
     return;
   }
 
-  let listCadastro = JSON.parse(localStorage.getItem("listCadastro") || "[]");
 
-  listCadastro.push({
-    tipo: 1,
-    nomeInfluencer: nomeInfluencer,
-    cpf: cpf,
-    email: email,
-    senha: senha,
-    localidade: localidade,
-    categorias: categorias,
-    descricao: descricao,
-    redesSociais: redesSociais,
-  });
 
-  localStorage.setItem("listCadastro", JSON.stringify(listCadastro));
+ listCadastro.push({
+   tipo: 1,
+   nomeInfluencer: nomeInfluencer,
+   cpf: cpf,
+   email: email,
+   senha: senha,
+   localidade: localidade,
+   categorias: categorias,
+   descricao: descricao,
+   redesSociais: redesSociais,
+ });
 
-  alert(
-    `Perfil cadastrado com sucesso. Bem vindo ao DIVULGA AÍ, ${nomeInfluencer}`
-  );
+ localStorage.setItem("listCadastro", JSON.stringify(listCadastro));
 
-  window.location.href = "../public/login.html";
+ alert(
+   `Perfil cadastrado com sucesso. Bem vindo ao DIVULGA AÍ, ${nomeInfluencer}`
+ );
+
+ window.location.href = "../public/login.html";
 }
