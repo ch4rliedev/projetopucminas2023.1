@@ -5,11 +5,22 @@ function salvarDados() {
   const senha = document.getElementById("senha").value;
   const localidade = document.querySelector(".form-select-lg").value;
 
+  let listCadastro = JSON.parse(localStorage.getItem("listCadastro") || "[]");
+
+    // Verifica se já existe um usuário cadastrado no localStorage pelo valor de email e o valor de cnpj
+    const existingUser = listCadastro.find((user) => user.email === email || user.cnpj === cnpj);
+    if (existingUser) {
+      if (existingUser.email === email) {
+        alert("Já existe um usuário cadastrado com este email.");
+      } else {
+        alert("Já existe um usuário cadastrado com este CNPJ.");
+      }
+      return;
+    }
+
   const categorias = Array.from(document.getElementsByClassName("categoria"))
     .filter((categoria) => categoria.checked)
     .map((categoria) => categoria.value);
-
-  console.log(categorias);
 
   const descricao = document.getElementById("descricao").value;
 
@@ -49,8 +60,6 @@ function salvarDados() {
     );
     return;
   }
-
-  let listCadastro = JSON.parse(localStorage.getItem("listCadastro") || "[]");
 
   listCadastro.push({
     tipo: 0,

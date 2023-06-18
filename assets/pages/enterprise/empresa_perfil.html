@@ -46,7 +46,7 @@
 
             </div>
             <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="index.html"><img src="/assets/images/logo_resized.png" alt="Divulga aí"></a>
+                <a class="navbar-brand" href="/pag_inicial.html"><img src="/assets/images/logo_resized.png" alt="Divulga aí"></a>
                 <div class="group d-flex align-items-center">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
@@ -72,10 +72,10 @@
 
                 <div class="conteudo">
                     <div class="introducao">
-                        <h1 id="nome_empresa">Nome: Empresa</h1>
-                        <h1 id="email">Email: empresa@gmail.com</h1>
-                        <h1 id="localidade">Localidade: Belo Horizonte - MG</h1>
-                        <h1 id="cnpj">CNPJ: XX.XXX.XXX/0001-XX</h1>
+                        <h1 id="nome_empresa">Nome: Não logado</h1>
+                        <h1 id="email">Email: Não logado</h1>
+                        <h1 id="localidade">Localidade: Não logado</h1>
+                        <h1 id="cnpj">CNPJ: Não logado</h1>
                     </div>
 
 
@@ -110,8 +110,8 @@
                     </div>
 
                     <div class="descricaoInf">
-                        <h1>Descrição: Descrição que a empresa fez sobre o próprio trabalho.</h1>
-                        <p id="descricao"></p>
+                        <h1>Descrição:</h1>
+                        <p id="descricao">Não logado</p>
                     </div>
 
 
@@ -139,26 +139,17 @@
     </div>
             
  <script type="text/javascript">
-    //pegar o listCadastro do localSrorage
     const data = localStorage.getItem("listCadastro");
-    //parse
     const parsedData = JSON.parse(data);
+    const email = localStorage.getItem("userCurrent");
 
-    //percorre o localStorege e pegar um item
-      for(item of parsedData){
-        //seleciona um id do html, e inseri o valor do localStorage,criado em cadastra perfil.
-        // nome da empresa
-        document.querySelector("#nome_empresa").innerHTML = `Nome: ${item.nomeEmpresa}`
-        //seleciona um id do html, e inseri o valor do localStorage, email
-        document.querySelector("#email").innerHTML = `Email: ${item.email}`
-        //seleciona um id do html, e inseri o valor do localStorage, localidade
-        document.querySelector("#localidade").innerHTML = `Localidade: ${item.localidade}`
-        //seleciona um id do html, e inseri o valor do localStorage, cnpj
-        document.querySelector("#cnpj").innerHTML = `CNPJ: ${item.cnpj}`
-        //seleciona um id do html, e inseri o valor do localStorage, descriÇao
-        document.querySelector("#descricao").innerHTML = `<q>${item.descricao}</q>`
-    }
+    let enterprise = parsedData.find(item => item.email === email);
 
+    document.querySelector("#nome_empresa").innerHTML = `Nome: ${enterprise.nomeEmpresa}`;
+    document.querySelector("#email").innerHTML = `Email: ${enterprise.email}`;
+    document.querySelector("#localidade").innerHTML = `Localidade: ${enterprise.localidade}`;
+    document.querySelector("#cnpj").innerHTML = `CNPJ: ${enterprise.cnpj}`;
+    document.querySelector("#descricao").innerHTML = `<q>${enterprise.descricao}</q>`;
 </script>          
     <!--jQuery-->
     <script src="/assets/js/jquery-3.3.1.js"></script>
