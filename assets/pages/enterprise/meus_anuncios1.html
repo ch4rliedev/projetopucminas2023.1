@@ -79,7 +79,7 @@
     <!--cria alguma seção a partir daqui-->
         
     <h2 class="anuncios">SEUS ANÚNCIOS</h2> 
-    <br><br><br>
+    <br>
     <section class="icon-container">
         <div class="img-an1">
             <h2 >Anúncio 1</h2>
@@ -89,9 +89,7 @@
         </div>
 
         <label class="picture">
-            <h2 >Preview Anúncio 1</h2><br>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>  
+            <h2 id="picture">Preview Anúncio 1</h2><br> 
                 
             
         </label>
@@ -119,14 +117,29 @@
         </div>
     </div>
     
- <!--pegar o valor do localStorage que foi criado em -> empresa_criar_ad.html e adicionar no nesse html-->      
+    
  <script type="text/javascript">
-    const data = localStorage.getItem("listAnuncio");
-    const parsedData = JSON.parse(data);
-    for(let ads of parsedData){
-        document.querySelector("#titulo").innerHTML = `${ads.titulo}`
-        document.querySelector("#anuncio").innerHTML = `${ads.descAnuncio}`
-        console.log(ads)
+    ultimo_email = localStorage.getItem("userCurrent")
+    //console.log(ultimo_email)
+    if(ultimo_email === ultimo_email){
+        parsedData = JSON.parse(localStorage.getItem("listAnuncio"))
+        let html_com_imagem = `
+<div class="container">
+<div class="row">
+  <section class="col-sm">
+    <img src="undraw_search_engines_ij7q.svg" alt="" class="img-thumbnail" width="200px">
+  </section>
+</div>
+</div`
+
+        for(let lista_anuncio of parsedData){
+           //console.log(lista_anuncio)
+            document.querySelector("#titulo").innerHTML = lista_anuncio.titulo
+            document.querySelector("#anuncio").innerHTML = lista_anuncio.descAnuncio
+            document.querySelector("#picture").innerHTML = html_com_imagem
+
+        }
+        
     }
 </script>
             
