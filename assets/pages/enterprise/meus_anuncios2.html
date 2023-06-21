@@ -83,14 +83,12 @@
                 <p class="anuncio">Detalhes do pedido:</p>
                
 
-                <div class="todosAnuncios">
-                   
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam dolore temporibus perferendis
-                        tenetur obcaecati veniam minima nesciunt! Quia excepturi officiis fugit iste nemo veniam
-                        commodi, sapiente tempore libero incidunt cupiditate expedita culpa nesciunt error assumenda
-                        corrupti in atque quidem eveniet.</p>
-                    
+                <div class="todosAnuncios">       
+                    <p id="ads">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus magnam vero repellendus repudiandae odit ea facere maxime amet nemo, natus pariatur. Accusantium voluptatum error repellat? Beatae unde modi corporis dolor!
+                    Pariatur delectus atque mollitia dignissimos tenetur odio harum ipsum dolorem maxime nostrum blanditiis temporibus modi libero, quis sed cum, repellat architecto deserunt. Nulla qui similique quas eum ut. Quisquam, illo!
+                    </p>
                 </div>
+
                     <br><br>
                 <p class="anuncio">Rede Social de escolha:</p>
                 <br><br><br>
@@ -100,8 +98,7 @@
                     <image src="/assets/images/tiktok.png" height="40" width="40"></image>
                     <input type="checkbox" class="redes" value="youtube">
                     <image src="/assets/images/youtube logo.png" height="40" width="40"></image>
-                    <input type="checkbox" class="redes" value="twitter">
-                    <image src="/assets/images/twitter-logo-4.png" height="40" width="40"></image>
+
                     <br><br><br><br>
 
                     <p class="anuncio">Valor:</p>
@@ -127,6 +124,17 @@
             </div>
         </div>
     </div>
+
+<script>
+    ultimo_email = localStorage.getItem("userCurrent")
+    if(ultimo_email === ultimo_email){
+        parsedData = JSON.parse(localStorage.getItem("listAnuncio"))
+        for(let lista_anuncio of parsedData){
+            document.querySelector("#ads").innerHTML = lista_anuncio.descAnuncio
+        }
+    }
+    
+</script>
 
     <!--jQuery-->
     <script src="/assets/js/jquery-3.3.1.js"></script>
