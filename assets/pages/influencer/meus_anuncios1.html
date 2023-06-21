@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Document title -->
-    <title>Meus Anúncios (Empresa)</title>
+    <title>Meus Anúncios (influencer)</title>
     <!-- Stylesheets & Fonts -->
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i%7CRajdhani:400,600,700"
@@ -59,11 +59,11 @@
 
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="./portal_influencer.html">Meu Portal</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./influencer_perfil.html">Meu perfil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./portal_empresa.html">Meu Portal</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./empresa_perfil.html">Meu perfil</a></li>
                         <li class="nav-item"><a class="nav-link" href="./meus_anuncios1.html">Meus anúncios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./influencer_chat.html">Meus chats</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./influencer_criar_ad.html">Fazer anúncio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./empresa_chat.html">Meus chats</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./empresa_criar_ad.html">Fazer anúncio</a></li>
                     </ul>
                 </div>
 
@@ -79,24 +79,22 @@
     <!--cria alguma seção a partir daqui-->
         
     <h2 class="anuncios">SEUS ANÚNCIOS</h2> 
-    <br><br><br>
+    <br>
     <section class="icon-container">
         <div class="img-an1">
             <h2 >Anúncio 1</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+            <p id="titulo">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+            <p id="anuncio">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
             
         </div>
 
         <label class="picture">
-            <h2 >Preview Anúncio 1</h2><br>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>  
+            <h2 id="picture">Preview Anúncio 1</h2><br> 
                 
             
         </label>
         <span>
-            <a href="/assets/pages/influencer/meus_anuncios2.html" class = "btn btn-primary">Ver Anúncio</a>
+            <a href="/assets/pages/enterprise/meus_anuncios2.html" class = "btn btn-primary">Ver Anúncio</a>
            </span>
     
         <br>
@@ -118,7 +116,33 @@
             </div>
         </div>
     </div>
+    
+    
+ <script type="text/javascript">
+    ultimo_email = localStorage.getItem("userCurrent")
+    //console.log(ultimo_email)
+    if(ultimo_email === ultimo_email){
+        parsedData = JSON.parse(localStorage.getItem("listAnuncio"))
+        let html_com_imagem = `
+<div class="container">
+<div class="row">
+  <section class="col-sm">
+    <img src="undraw_search_engines_ij7q.svg" alt="" class="img-thumbnail" width="200px">
+  </section>
+</div>
+</div`
 
+        for(let lista_anuncio of parsedData){
+           //console.log(lista_anuncio)
+            document.querySelector("#titulo").innerHTML = lista_anuncio.titulo
+            document.querySelector("#anuncio").innerHTML = lista_anuncio.descAnuncio
+            document.querySelector("#picture").innerHTML = html_com_imagem
+
+        }
+        
+    }
+</script>
+            
     <!--jQuery-->
     <script src="/assets/js/jquery-3.3.1.js"></script>
     <!--Plugins-->
